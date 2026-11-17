@@ -1,0 +1,12 @@
+
+services:
+  app:
+    image: node:22-alpine
+    container_name: react-jsx-render-app
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5174:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
